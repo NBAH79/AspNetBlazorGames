@@ -3,7 +3,7 @@ Blazor for games.</br>
 Demo video is <b>demo.mp4</b>
 
 Howto use:
-1. Create a new Blazor project.</br>
+1. Create a new Blazor Server project.</br>
 2. Add two services to Startup.cs</br>
 <p>public void ConfigureServices(IServiceCollection services)</br>
         {</br>
