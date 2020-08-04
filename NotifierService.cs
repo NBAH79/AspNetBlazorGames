@@ -5,8 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Blue.Data
-{
+
     public class UpdateService : IDisposable
     {
         readonly CancellationTokenSource cts = new CancellationTokenSource();
@@ -73,4 +72,4 @@ namespace Blue.Data
             thread?.Join();
         }
     }
-}
+
