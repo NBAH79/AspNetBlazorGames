@@ -5,8 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.Server.Circuits;
 
-namespace Blue.Data
-{
+
     public class Tank
     {
         float left;
@@ -121,4 +120,4 @@ namespace Blue.Data
 
         }
     }
-}
+
