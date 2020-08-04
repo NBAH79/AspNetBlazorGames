@@ -1,7 +1,5 @@
 ﻿@page "/test"
 
-@using System.Threading;
-@using Blue.Data
 @inject TankService Tank;
 @inject UpdateService Update;
 @implements IDisposable
@@ -48,7 +46,6 @@
                 if (Initialized) return; //called twice
                 Initialized = true;
 
-                // Update.Notify += OnUpdate;
                 Update.Notify+=OnUpdate;
             }
 
@@ -57,7 +54,7 @@
         {
             /*await*/ InvokeAsync(() =>
             {
-                lastNotification.value++;// = (key, value);
+                lastNotification.value++;
                 StateHasChanged();
             });
         }
