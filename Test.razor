@@ -1,0 +1,69 @@
+﻿@page "/test"
+
+@using System.Threading;
+@using Blue.Data
+@inject TankService Tank;
+@inject UpdateService Update;
+@implements IDisposable
+
+<style type="text/css">
+    .sprite {
+        position: absolute;
+        display: block;
+        width: 128px;
+        height: 128px;
+        background-size: cover;
+        z-index: 999;
+        transition: linear 1s;
+    }
+
+    #tank {
+        background-image: url(img/tank.png);
+    }
+</style>
+
+@for (int m = 0; m < 15; m++)
+{
+    @for (int n = 1; n < 11; n++)
+    {
+        <div class="sprite" id="tank" style="
+        left: @Tank.tank[m].Left;
+        transform: scaleX(@Tank.tank[m].Scale);
+        top:@(n*64+"px");
+" />
+    }
+}
+
+    <h3>section</h3>
+    <div style="height:500px;background-color:#e0e0e0; margin:8px; text-align:left; padding:16px">@lastNotification.value
+    </div>
+
+    @code {
+            bool Initialized = false;
+
+            private (string key, int value) lastNotification;
+
+            protected override void OnInitialized()
+            {
+                if (Initialized) return; //called twice
+                Initialized = true;
+
+                // Update.Notify += OnUpdate;
+                Update.Notify+=OnUpdate;
+            }
+
+
+        public /*async Task*/void OnUpdate()
+        {
+            /*await*/ InvokeAsync(() =>
+            {
+                lastNotification.value++;// = (key, value);
+                StateHasChanged();
+            });
+        }
+
+        public void Dispose()
+        {
+            Update.Notify -= OnUpdate;
+        }
+    }
