@@ -1,6 +1,6 @@
 # AspNetBlazorGames
-Blazor for games.
-Demo video: 2020-08-04%2017-34-27.mp4
+Blazor for games.</br>
+Demo video: <a href="2020-08-04%2017-34-27.mp4"/></br>
 
 Howto use:
 1. Create a new Blazor project.</br>
