@@ -1,6 +1,6 @@
 # AspNetBlazorGames
 Blazor for games.</br>
-Demo video is demo.mp4
+Demo video is <b>demo.mp4</b>
 
 Howto use:
 1. Create a new Blazor project.</br>
